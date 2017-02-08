@@ -1,0 +1,1483 @@
+Started GET "/" for 127.0.0.1 at 2017-02-06 22:22:50 -0800
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (50.6ms)
+Completed 200 OK in 119ms (Views: 87.0ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20170207062830)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170207062830"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-07 06:29:40 UTC], ["updated_at", 2017-02-07 06:29:40 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/user/sign_up" for 127.0.0.1 at 2017-02-06 22:30:15 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/user/sign_up"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [15 times] (6.5ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.8ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (19.2ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (277.7ms)
+Started GET "/user/sign_up" for 127.0.0.1 at 2017-02-06 22:31:01 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/user/sign_up"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [15 times] (5.2ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (127.9ms)
+Started GET "/user/sign_in" for 127.0.0.1 at 2017-02-06 22:31:02 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/user/sign_in"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [15 times] (6.4ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (150.9ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-06 22:31:16 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (3.1ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (46.4ms)
+Completed 200 OK in 636ms (Views: 595.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 22:39:06 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (7.9ms)
+Completed 200 OK in 76ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 22:39:07 -0800
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (5.5ms)
+Completed 200 OK in 16ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePosts (20170207064010)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170207064010"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:09:43 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 34ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/css/bootstrap.min.css" for 127.0.0.1 at 2017-02-06 23:09:44 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/css/bootstrap.min.css"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (23.2ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (23.4ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (292.8ms)
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:09:48 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/css/bootstrap.min.css" for 127.0.0.1 at 2017-02-06 23:09:48 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/css/bootstrap.min.css"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (15.7ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (172.1ms)
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:09:49 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/css/bootstrap.min.css" for 127.0.0.1 at 2017-02-06 23:09:49 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/css/bootstrap.min.css"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (21.0ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (196.9ms)
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:10:35 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 32ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/css/bootstrap.min.css" for 127.0.0.1 at 2017-02-06 23:10:35 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/css/bootstrap.min.css"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (17.6ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (18.0ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (226.3ms)
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:11:26 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 31ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/css/bootstrap.min.css" for 127.0.0.1 at 2017-02-06 23:11:26 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/css/bootstrap.min.css"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (17.8ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.4ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (251.1ms)
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:14:10 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6658ms (Views: 6639.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:20:09 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 98ms (Views: 93.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:20:12 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 65ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:23:18 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 477ms (Views: 461.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-02-06 23:23:21 -0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 84ms (Views: 80.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-02-06 23:27:27 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 530ms (Views: 514.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-06 23:27:30 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 128ms (Views: 111.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-02-06 23:27:34 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 93ms (Views: 91.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-06 23:27:36 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 124ms (Views: 122.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-06 23:31:02 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 110ms (Views: 108.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:31:05 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 96ms (Views: 92.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-02-06 23:31:06 -0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 99ms (Views: 96.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-06 23:31:07 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.3ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 128ms (Views: 126.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-02-06 23:31:10 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 88ms (Views: 86.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-02-06 23:32:29 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.7ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (53.7ms)
+Completed 200 OK in 538ms (Views: 503.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:32:33 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 115ms (Views: 112.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-02-06 23:32:34 -0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 117ms (Views: 114.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-06 23:32:35 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (3.0ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 163ms (Views: 157.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-02-06 23:32:36 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.7ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 143ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:32:37 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 96ms (Views: 93.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-02-06 23:36:41 -0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 85ms (Views: 74.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:57:49 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 87ms (Views: 82.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-06 23:57:51 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 127ms (Views: 107.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-02-06 23:57:52 -0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (3.1ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/registrations/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 133ms (Views: 131.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-02-06 23:58:12 -0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jdM91poF2gAcE24O7uvtaApjnyB9daO1VEecc8oTtITIh1Z5jBbYdPaUAKsmtOGsJZIZknv6zhX3+0b40h6vBg==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@gmail.com"], ["encrypted_password", "$2a$11$ooVH/l1OdTsafzocStl3Y.Z0AVISczY6Ms/vqIJ/gNzqrTWytTNoW"], ["created_at", 2017-02-07 07:58:13 UTC], ["updated_at", 2017-02-07 07:58:13 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", 2017-02-07 07:58:13 UTC], ["last_sign_in_at", 2017-02-07 07:58:13 UTC], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", 2017-02-07 07:58:13 UTC], ["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 235ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:58:13 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 89ms (Views: 86.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-06 23:58:18 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OvLk4HRxyMfuWVwQ+ELD35iTSdz1XkkhS/bpMAJJUxLw3HaPtI0BvrCaP1OfrrsCoUfeFN4JI2CRiBdOBVr1lg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:58:18 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 74ms (Views: 71.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-06 23:58:46 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 103ms (Views: 100.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-06 23:58:54 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p/jmKIksfR2IMjLs1hxfa8HEpZduSLvvA9/HH2dNEH8qN6v5ivJ6b09iVQtcyq2MYMmospDXl2ZBX4GzOh8obA==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-07 07:58:55 UTC], ["sign_in_count", 2], ["updated_at", 2017-02-07 07:58:55 UTC], ["id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 165ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:58:55 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 96ms (Views: 91.8ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-06 23:59:29 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sVM7yqv6xO5sspdKa3/qFcoS9bygNMydM3+z5Ur4nshuukftW3QezalhllJuHnpc46VrkQuHhnGqY27TfXcKKQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:59:29 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 89ms (Views: 86.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-06 23:59:31 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 103ms (Views: 101.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-06 23:59:42 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1fnQxbSHR09o8JsD0wsb/wtwF3EKFCbugz/gMSGBGSFDGs/Xqpjqhl0hkPpe1Jp5k8IPyhRndNqDxqTaWS/MkA==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-07 07:59:42 UTC], ["last_sign_in_at", 2017-02-07 07:58:55 UTC], ["sign_in_count", 3], ["updated_at", 2017-02-07 07:59:42 UTC], ["id", 1]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 164ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:59:42 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 83ms (Views: 79.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-06 23:59:43 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VAA62JGL3L/YJ2mJ7lktsrlhe4PvQx7SAx1bSpujww1G+fc62JCkoSfqtn1fbLT5ih2pluscKxlFugu64gNxNw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 23:59:43 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 106ms (Views: 103.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-07 00:00:32 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 111ms (Views: 108.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-07 00:00:46 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RbFyVlWlQD7ixw2w4LDr3pHnkFiZeLHW6h0LBR2sz+dER5tsFnhn0WtzB7CrJVih0mU+8FECpN6Z+aM77OGTLw==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-07 08:00:46 UTC], ["last_sign_in_at", 2017-02-07 07:59:42 UTC], ["sign_in_count", 4], ["updated_at", 2017-02-07 08:00:46 UTC], ["id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 248ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-07 00:00:46 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 476ms (Views: 470.2ms | ActiveRecord: 2.9ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-07 00:00:49 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RCK5R5WoC6W/srmN8XSf2m/dtphi28waxghfTB7SXMJEzEwYwX0DbTFTCzHywLriwyCrr+PmGH3cYaFSxT2gsQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-07 00:00:49 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 72ms (Views: 69.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-07 00:01:32 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (66.6ms)
+Completed 200 OK in 152ms (Views: 148.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-07 00:01:38 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2blibmeamTJdxeU7JHQBBTxE7vHnMbmKaz+wtYr8HdSb05czpxalgSsE5hPMqSUyHz+SymG8Q1VoJSyYa3hK3A==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-07 08:01:38 UTC], ["last_sign_in_at", 2017-02-07 08:00:46 UTC], ["sign_in_count", 5], ["updated_at", 2017-02-07 08:01:38 UTC], ["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 170ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-07 00:01:38 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 133ms (Views: 130.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-02-07 00:01:42 -0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 120ms (Views: 105.8ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-07 00:01:43 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6JOt2RQAO7zipQlRP489fQsuCU6BOUhzFd52+k+jRgTx4MbtTtNSktKDNxEEswTrDxMzgR0ptQMJ6Njay1TisQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-07 00:01:43 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 94ms (Views: 91.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentImageToPosts (20170207080522)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddAttachmentImageToPosts < ActiveRecord::Migration[4.2] (called from block in execute_migration_in_transaction at /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/activerecord-5.0.1/lib/active_record/migration.rb:1212)
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "posts" ADD "image_file_name" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "posts" ADD "image_content_type" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "posts" ADD "image_file_size" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "posts" ADD "image_updated_at" datetime[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170207080522"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-02-07 00:30:36 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 547ms (Views: 530.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-02-07 00:30:40 -0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 172ms (Views: 149.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-02-07 00:41:12 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 500ms (Views: 483.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-02-07 00:41:15 -0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (53.4ms)
+Completed 200 OK in 178ms (Views: 152.9ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-02-07 00:41:16 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fgcDQbOHI9mJG+t67TJau+ryDFTstIAy0nU0sybR4D3K7O6EOBbDbtMimu0AzMZV77/HUnD6CQN1R4FPtqZ8IA==", "post"=>{"description"=>""}, "commit"=>"Create Post"}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", ""], ["created_at", 2017-02-07 08:41:16 UTC], ["updated_at", 2017-02-07 08:41:16 UTC]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 13ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-07 00:41:16 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 97ms (Views: 92.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-07 00:43:49 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 448ms (Views: 406.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/images/medium/missing.png" for 127.0.0.1 at 2017-02-07 00:43:50 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (12.0ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (17.6ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (213.0ms)
+Started GET "/" for 127.0.0.1 at 2017-02-07 00:43:52 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 90ms (Views: 86.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-07 00:43:52 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 115ms (Views: 112.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-02-07 00:46:39 -0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 132ms (Views: 106.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/images/medium/missing.png" for 127.0.0.1 at 2017-02-07 00:46:39 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (14.0ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (159.5ms)
+Started POST "/posts" for 127.0.0.1 at 2017-02-07 00:46:57 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g47ykTXFFGlgMbbLgWAzIXw4/CiZVnh33Shg0m+xS7s3ZR9UvlT03joIx1xsnq/PeXU3LgUY8UZ6GtUu/8bXpg==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fd4e3cce740 @tempfile=#<Tempfile:/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/RackMultipart20170207-47658-cvfcg4.png>, @original_filename="Screen Shot 2017-02-05 at 21.35.01.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"Screen Shot 2017-02-05 at 21.35.01.png\"\r\nContent-Type: image/png\r\n">, "description"=>"1"}, "commit"=>"Create Post"}
+Command :: file -b --mime '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/f16964f4a9a32f9b3f73cc6fe7ab310320170207-47658-p3kgkx.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/fbaf7835adeaba2669f0d462378d088c20170207-47658-z0bton.png[0]' 2>/dev/null
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.0ms)
+
+
+  
+Paperclip::Errors::CommandNotFoundError (Could not run the `identify` command. Please install ImageMagick.):
+  
+app/controllers/posts_controller.rb:15:in `create'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.2ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (142.5ms)
+Started GET "/posts/new" for 127.0.0.1 at 2017-02-07 00:48:25 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (48.8ms)
+Completed 200 OK in 569ms (Views: 527.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-02-07 00:48:32 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q86t8BNwJ2uo5oIHnYi6LKPOyWShStelIcmE8ofKcMy+QMJ8SttIjr90XK581Obsv7iTKLltZezkH4weBYbVoA==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fd8f6c74c88 @tempfile=#<Tempfile:/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/RackMultipart20170207-48950-1d05jom.png>, @original_filename="Screen Shot 2017-02-05 at 21.35.01.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"Screen Shot 2017-02-05 at 21.35.01.png\"\r\nContent-Type: image/png\r\n">, "description"=>"1"}, "commit"=>"Create Post"}
+Command :: file -b --mime '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/f16964f4a9a32f9b3f73cc6fe7ab310320170207-48950-34h4tv.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/fbaf7835adeaba2669f0d462378d088c20170207-48950-28c83m.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/fbaf7835adeaba2669f0d462378d088c20170207-48950-28c83m.png[0]'
+Command :: convert '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/fbaf7835adeaba2669f0d462378d088c20170207-48950-28c83m.png[0]' -auto-orient -resize "500x500>" '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/596438cd78ba823b55d7a15123c6519020170207-48950-i87s0b'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/fbaf7835adeaba2669f0d462378d088c20170207-48950-28c83m.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/fbaf7835adeaba2669f0d462378d088c20170207-48950-28c83m.png[0]'
+Command :: convert '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/fbaf7835adeaba2669f0d462378d088c20170207-48950-28c83m.png[0]' -auto-orient -resize "100x100>" '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/596438cd78ba823b55d7a15123c6519020170207-48950-14zfvl3'
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/f16964f4a9a32f9b3f73cc6fe7ab310320170207-48950-7awcxc.png'
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("description", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["description", "1"], ["created_at", 2017-02-07 08:48:32 UTC], ["updated_at", 2017-02-07 08:48:32 UTC], ["image_file_name", "Screen_Shot_2017-02-05_at_21.35.01.png"], ["image_content_type", "image/png"], ["image_file_size", 117617], ["image_updated_at", 2017-02-07 08:48:32 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 467ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2017-02-07 00:48:33 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 162ms (Views: 146.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-02-07 00:48:36 -0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 151ms (Views: 147.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-02-07 00:48:42 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c+Tsz8BhFtd7Yw3Z3e0aMaVdcWj+NlPUNFshUm5NF3bHDwEKS/D2YCFafE4wE4bfoBC6bmJ42uWTaZSu/jqLaw==", "post"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fd8f5f29470 @tempfile=#<Tempfile:/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/RackMultipart20170207-48950-tjyoep.png>, @original_filename="Screen Shot 2017-02-05 at 21.37.14.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"Screen Shot 2017-02-05 at 21.37.14.png\"\r\nContent-Type: image/png\r\n">, "description"=>"2"}, "commit"=>"Create Post"}
+Command :: file -b --mime '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/5ff2e4f2d9880c145fab01af747cf8bd20170207-48950-k3776z.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/e55fbca6b042b22741ae2f52df61757f20170207-48950-dkbvx6.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/e55fbca6b042b22741ae2f52df61757f20170207-48950-dkbvx6.png[0]'
+Command :: convert '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/e55fbca6b042b22741ae2f52df61757f20170207-48950-dkbvx6.png[0]' -auto-orient -resize "500x500>" '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/d8fe9a0dcf54485ee514b4c5f1e14e8620170207-48950-ve4n9a'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/e55fbca6b042b22741ae2f52df61757f20170207-48950-dkbvx6.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/e55fbca6b042b22741ae2f52df61757f20170207-48950-dkbvx6.png[0]'
+Command :: convert '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/e55fbca6b042b22741ae2f52df61757f20170207-48950-dkbvx6.png[0]' -auto-orient -resize "100x100>" '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/d8fe9a0dcf54485ee514b4c5f1e14e8620170207-48950-trchcu'
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/fs/10n3vbkj6cv411pw6zkzqb1h0000gn/T/5ff2e4f2d9880c145fab01af747cf8bd20170207-48950-1aqw1ui.png'
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("description", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["description", "2"], ["created_at", 2017-02-07 08:48:42 UTC], ["updated_at", 2017-02-07 08:48:42 UTC], ["image_file_name", "Screen_Shot_2017-02-05_at_21.37.14.png"], ["image_content_type", "image/png"], ["image_file_size", 31341], ["image_updated_at", 2017-02-07 08:48:42 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 262ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2017-02-07 00:48:42 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 180ms (Views: 170.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-07 00:48:43 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 99ms (Views: 95.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/medium/missing.png" for 127.0.0.1 at 2017-02-07 00:48:43 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (14.4ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.7ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (187.7ms)
+Started GET "/" for 127.0.0.1 at 2017-02-07 00:51:05 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 64ms (Views: 60.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/medium/missing.png" for 127.0.0.1 at 2017-02-07 00:51:05 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (10.8ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (139.1ms)
+Started GET "/posts/new" for 127.0.0.1 at 2017-02-07 00:51:07 -0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 80ms (Views: 76.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/medium/missing.png" for 127.0.0.1 at 2017-02-07 00:51:07 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (9.0ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (129.1ms)
+Started GET "/" for 127.0.0.1 at 2017-02-07 00:51:09 -0800
+Started GET "/images/medium/missing.png" for 127.0.0.1 at 2017-02-07 00:51:09 -0800
+Processing by PostsController#index as HTML
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  Rendering posts/index.html.erb within layouts/application
+  
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendered posts/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 101ms (Views: 97.6ms | ActiveRecord: 0.5ms)
+
+
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (9.8ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.1ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (163.1ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-07 00:54:23 -0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 122ms (Views: 104.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/images/medium/missing.png" for 127.0.0.1 at 2017-02-07 00:54:23 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (13.4ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (198.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-07 00:54:30 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3xraYmwf+Q42QFScQg6AjdZecDuBpqtP5q+UHzTu3FIx/eT5vjQV4wBIxNUu6y6r1qhoS9FUr0Yr6GsGy/w9fg==", "user"=>{"email"=>"sk8danny@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sk8danny@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3xraYmwf+Q42QFScQg6AjdZecDuBpqtP5q+UHzTu3FIx/eT5vjQV4wBIxNUu6y6r1qhoS9FUr0Yr6GsGy/w9fg==", "user"=>{"email"=>"sk8danny@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/shared/_links.html.erb (2.3ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0/gems/devise-4.2.0/app/views/devise/sessions/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 264ms (Views: 105.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-07 00:54:38 -0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xvi2srUUvlLcZ8PqA/9P7oBTqdbM5ZZz96jjXyDlvK47dtk+7L/Rt8v1HUPioxMunCXzmtTCJDoyfuuzoqkZwg==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-02-07 08:54:39 UTC], ["last_sign_in_at", 2017-02-07 08:01:38 UTC], ["sign_in_count", 6], ["updated_at", 2017-02-07 08:54:39 UTC], ["id", 1]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 168ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-07 00:54:39 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 84ms (Views: 80.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images/medium/missing.png" for 127.0.0.1 at 2017-02-07 00:54:39 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (19.0ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.6ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (234.3ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-07 00:54:41 -0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/U8bEiuln+DELMwA7v4TrhWKEHlFnbMozbuljkLiJ0SnNCGSu4u9lzNNjJtxTjBqBBjZ/QyeVjkhXwmjUtj7Lw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-07 00:54:41 -0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 103ms (Views: 98.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/medium/missing.png" for 127.0.0.1 at 2017-02-07 00:54:42 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered collection of /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [27 times] (24.8ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendering /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Macbook/.rvm/gems/ruby-2.3.0@global/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (195.3ms)
