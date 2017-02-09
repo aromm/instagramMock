@@ -20,3 +20,6 @@ Contains protections against attack on system by limiting what the user can chan
 
 ![Main Feed](https://cloud.githubusercontent.com/assets/16809166/22761158/6bc1ee90-ee0e-11e6-8375-9ad21d9e91a0.png)
 The numbers under is not a automatic numbering system. I just wrote 1 and 2 as descriptions. The broken picture on top is due to the fact that I did not actually upload a picture in a new post submission. 
+
+
+![republicans](https://cloud.githubusercontent.com/assets/19671873/22768939/51eb6196-ee3a-11e6-92dc-aff33aa43590.jpg)
